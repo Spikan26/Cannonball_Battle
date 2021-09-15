@@ -5,25 +5,38 @@ using UnityEngine;
 public class BouletScript : MonoBehaviour
 {
 
-    public int speed = 3;
-        
-    // Start is called before the first frame update
-    void Start()
-    {
-        speed = 5;
-        Debug.Log("Coucou");
-    }
+    public int speed = 5;
+    public bool isPiece;
+    public bool isGrenade;
 
     // Update is called once per frame
     void Update()
     {
-        CheckInput();
-        speed += 1;
+        transform.position += transform.forward * Time.deltaTime * speed;
     }
- 
-    void CheckInput()
+
+    private void OnTriggerEnter(Collider other)
     {
-
+        if (other.transform.tag == "Player")
+        {
+            if (isPiece)
+            {
+                //TODO: Ajouter score
+                Destroy(gameObject);
+            }
+            else if (isGrenade)
+            {
+                GameObject[] allBoulet = GameObject.FindGameObjectsWithTag("Boulet");
+                foreach (GameObject boulet in allBoulet)
+                {
+                    Destroy(boulet);
+                }
+                
+            }
+            else
+            {
+                Debug.Log("GAME OVER");
+            }
+        }
     }
-
 }

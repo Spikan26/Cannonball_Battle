@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2211378438791449766}
   - component: {fileID: 3951828529609170018}
   - component: {fileID: -203400742064367039}
-  - component: {fileID: 2020934810640106816}
+  - component: {fileID: 8496362726750100374}
   m_Layer: 0
-  m_Name: BouletNormal
+  m_Name: BouletRapide
   m_TagString: Boulet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af7a81b1abffff8469e9a25224d1ca07, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,10 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69532b35e36579841ba19985043f5dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   isPiece: 0
   isGrenade: 0
---- !u!54 &2020934810640106816
+--- !u!54 &8496362726750100374
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
