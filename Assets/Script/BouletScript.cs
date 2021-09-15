@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BouletScript : MonoBehaviour
 {
-
     public int speed = 5;
     public bool isPiece;
     public bool isGrenade;
@@ -35,7 +34,8 @@ public class BouletScript : MonoBehaviour
             }
             else
             {
-                Debug.Log("GAME OVER");
+                GameObject sceneChanger = GameObject.FindGameObjectWithTag("SceneChanger");
+                sceneChanger.GetComponent<SceneChangerScript>().ChangeScene("GameOver");
             }
         }
     }

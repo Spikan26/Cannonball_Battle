@@ -44,7 +44,7 @@ public class PlayerTargetMoveScript : MonoBehaviour
                 transform.position = newPos;
             }
         }
-
+        
         //Moving Down
         if (Input.GetKeyDown(KeyCode.S))
         {
