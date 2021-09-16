@@ -55,5 +55,55 @@ public class PlayerTargetMoveScript : MonoBehaviour
                 transform.position = newPos;
             }
         }
+
     }
+
+    public void MobileInput(SwipeData direction)
+    {
+        //Moving Up
+        if (direction.Direction.ToString() == "Up")
+        {
+            Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 5);
+
+            if (newPos.z < limitNordEst.transform.position.z)
+            {
+                transform.position = newPos;
+            }
+        }
+
+        //Moving Left
+        if (direction.Direction.ToString() == "Left")
+        {
+            Vector3 newPos = new Vector3(transform.position.x + 5, transform.position.y, transform.position.z);
+
+            if (newPos.x < limitNordEst.transform.position.x)
+            {
+                transform.position = newPos;
+            }
+        }
+
+        //Moving Right
+        if (direction.Direction.ToString() == "Right")
+        {
+            Vector3 newPos = new Vector3(transform.position.x - 5, transform.position.y, transform.position.z);
+
+            if (newPos.x > limitSudOuest.transform.position.x)
+            {
+                transform.position = newPos;
+            }
+        }
+
+        //Moving Down
+        if (direction.Direction.ToString() == "Down")
+        {
+            Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z - 5);
+
+            if (newPos.z > limitSudOuest.transform.position.z)
+            {
+                transform.position = newPos;
+            }
+        }
+    }
+
+
 }
