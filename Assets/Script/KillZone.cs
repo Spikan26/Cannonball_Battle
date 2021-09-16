@@ -8,4 +8,6 @@ public class KillZone : MonoBehaviour
     {
         Destroy(other.gameObject);
     }
+
+
 }

@@ -14,33 +14,31 @@ public class GameManagerScript : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        if (PlayerPrefs.HasKey("Vie")) { } else { PlayerPrefs.SetInt("Vie", 3); }
+        if (PlayerPrefs.HasKey("VieMax")) { } else { PlayerPrefs.SetInt("VieMax", 3); }
+        if (PlayerPrefs.HasKey("VieRegenStart")) { } else { PlayerPrefs.SetString("VieRegenStart", ""); }
+        if (PlayerPrefs.HasKey("Credit")) { PlayerPrefs.SetInt("Credit", 0); }
+
+        score = 0;
+        vie = PlayerPrefs.GetInt("Vie");
+        credit = PlayerPrefs.GetInt("Credit");
+        vieMax = PlayerPrefs.GetInt("VieMax");
+
     }
 
 
     void Start()
     {
-        score = 0;
-
-        if (PlayerPrefs.HasKey("Vie")) { } else { PlayerPrefs.SetInt("Vie", 3); }
-        if (PlayerPrefs.HasKey("VieMax")) { } else { PlayerPrefs.SetInt("VieMax", 3); }
-        if (PlayerPrefs.HasKey("VieRegen")) { } else { PlayerPrefs.SetString("VieRegen", "false"); }
-        if (PlayerPrefs.HasKey("VieRegenStart")) { } else { PlayerPrefs.SetString("VieRegenStart", ""); }
-        if (PlayerPrefs.HasKey("Credit")) { PlayerPrefs.SetInt("Credit", 0); }
-
-        vieMax = PlayerPrefs.GetInt("VieMax");
+        
     }
 
     private void Update()
     {
         GestionVie();
-
+        credit = PlayerPrefs.GetInt("Credit");
     }
 
-    public void TESToption()
-    {
-        Debug.Log("Vie MINUS");
-        PlayerPrefs.SetInt("Vie", 2);
-    }
     public void GestionVie()
     {
         vie = PlayerPrefs.GetInt("Vie");
