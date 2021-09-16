@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class TextManagerMenuScript : MonoBehaviour
 {
     public Text vieText;
+    public Text vieShopText;
     public Text creditText;
+    public Text creditShopText;
 
 
     public void Awake()
@@ -23,6 +25,8 @@ public class TextManagerMenuScript : MonoBehaviour
         int credit = gameManager.GetComponent<GameManagerScript>().credit;
 
         vieText.text = "Vie : " + vie.ToString() + " / " + vieMax.ToString();
+        vieShopText.text = "Vie : " + vie.ToString() + " / " + vieMax.ToString();
         creditText.text = "Credit : " + credit.ToString();
+        creditShopText.text = "Credit : " + credit.ToString();
     }
 }

@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour
         if (PlayerPrefs.HasKey("Vie")) { } else { PlayerPrefs.SetInt("Vie", 3); }
         if (PlayerPrefs.HasKey("VieMax")) { } else { PlayerPrefs.SetInt("VieMax", 3); }
         if (PlayerPrefs.HasKey("VieRegenStart")) { } else { PlayerPrefs.SetString("VieRegenStart", ""); }
-        if (PlayerPrefs.HasKey("Credit")) { PlayerPrefs.SetInt("Credit", 0); }
+        if (PlayerPrefs.HasKey("Credit")) { } else { PlayerPrefs.SetInt("Credit", 0); }
 
         score = 0;
         vie = PlayerPrefs.GetInt("Vie");
