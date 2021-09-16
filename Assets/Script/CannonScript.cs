@@ -6,8 +6,10 @@ public class CannonScript : MonoBehaviour
 {
     public GameObject GrenadeBoulet;
 
+    //Lance le boulet devant le canon
     public void LaunchProjectile(GameObject boulet)
     {
+        //Si le boulet est une grenade, réduit ses chance d'apparaitre
         if(boulet == GrenadeBoulet)
         {
             float rand = Random.value;

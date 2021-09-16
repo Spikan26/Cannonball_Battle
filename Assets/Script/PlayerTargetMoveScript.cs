@@ -12,24 +12,29 @@ public class PlayerTargetMoveScript : MonoBehaviour
 
     public void Start()
     {
+        //Initialise le temps de récupération du déplacement
         movementCooldown = Time.time;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        //Si le joueur n'est pas en récupération de son déplacement précédent
         if(Time.time - 0.2f > movementCooldown)
         {
             //Moving Up
             if (Input.GetKeyDown(KeyCode.Z))
             {
+                //Situe la prochaine destination
                 Vector3 newPos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 5);
 
+                //Vérifie si le déplacement n'est pas en dehors de la zone
                 if (newPos.z < limitNordEst.transform.position.z)
                 {
                     transform.position = newPos;
                 }
 
+                //Active la récupération
                 movementCooldown = Time.time;
             }
 
@@ -75,6 +80,7 @@ public class PlayerTargetMoveScript : MonoBehaviour
 
     }
 
+    //Input pour les joueurs mobile (swipe)
     public void MobileInput(SwipeData direction)
     {
         if(Time.time - 0.2f > movementCooldown)
