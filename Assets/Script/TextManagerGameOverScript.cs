@@ -32,6 +32,9 @@ public class TextManagerGameOverScript : MonoBehaviour
             gameManager.GetComponent<GameManagerScript>().NewHighScore(newscore);
         }
 
+        int credit = PlayerPrefs.GetInt("Credit");
+        credit += newscore / 10;
+        PlayerPrefs.SetInt("Credit", credit);
 
         gameManager.GetComponent<GameManagerScript>().ResetScore();
     }
