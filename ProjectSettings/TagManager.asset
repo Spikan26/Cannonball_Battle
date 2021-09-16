@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boulet
   - SceneChanger
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,8 @@ public class BouletScript : MonoBehaviour
         {
             if (isPiece)
             {
-                //TODO: Ajouter score
+                GameObject gameManager = GameObject.FindGameObjectWithTag("GameManager");
+                gameManager.GetComponent<GameManagerScript>().AddScore(10);
                 Destroy(gameObject);
             }
             else if (isGrenade)
@@ -34,6 +35,11 @@ public class BouletScript : MonoBehaviour
             }
             else
             {
+                int vie = PlayerPrefs.GetInt("Vie");
+                vie--;
+                PlayerPrefs.SetInt("Vie", vie);
+
+
                 GameObject sceneChanger = GameObject.FindGameObjectWithTag("SceneChanger");
                 sceneChanger.GetComponent<SceneChangerScript>().ChangeScene("GameOver");
             }
